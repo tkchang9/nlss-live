@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "postcss": "postcss --config postcss.json"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
