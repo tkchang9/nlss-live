@@ -7,7 +7,7 @@
       "postcss-nested",
       "postcss-mixins"
     ],
-    "input": "src/css/main.css",
+    "input": "src/css/main.pcss",
     "output": "dist/main.css",
     "local-plugins": true,
     "watch": true,
