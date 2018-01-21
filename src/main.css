@@ -6,4 +6,9 @@ $fontYellow:#F9D877;
 $fontYellowSub:#CC4F3D;
 
 // Title/header
- 
+ .title, .titleThe {
+     color: $fontYellow;
+ }
+ .titleLive {
+     color: $mainRed;
+ }
