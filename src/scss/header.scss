@@ -5,12 +5,12 @@
 // Title/header
 .title, .titleThe {
     color: $fontYellow;
-    @include textShadow3D($fontYSub);
+    @include textShadow3D(5, $fontYSub);
 }
 .titleLive {
     color: $mainRed;
     font-size: 1.2em;
-    @include textShadow3D($mainPurple);
+    @include textShadow3D(5, $mainPurple);
 }
 
 header {

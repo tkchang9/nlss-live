@@ -1,6 +1,7 @@
-@mixin textShadow3D($color) {
-    text-shadow: 1px 1px $color,
-                 2px 2px $color,
-                 3px 3px $color,
-                 4px 4px $color;
+@mixin textShadow3D($size, $color) {
+    $shadow: ();
+    @for $i from 1 through $size {
+    $shadow: append($shadow, $i+px $i+px $color, comma);
+    };
+    text-shadow: $shadow;
 }
