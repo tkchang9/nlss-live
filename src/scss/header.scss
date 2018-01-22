@@ -1,0 +1,24 @@
+//imports
+@import 'colours.scss';
+@import 'mixins.scss';
+
+// Title/header
+.title, .titleThe {
+    color: $fontYellow;
+    @include textShadow3D($fontYSub);
+}
+.titleLive {
+    color: $mainRed;
+    font-size: 1.2em;
+    @include textShadow3D($mainPurple);
+}
+
+header {
+    background-color: $mainBrown;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    
+}

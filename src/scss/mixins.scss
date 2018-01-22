@@ -1,0 +1,6 @@
+@mixin textShadow3D($color) {
+    text-shadow: 1px 1px $color,
+                 2px 2px $color,
+                 3px 3px $color,
+                 4px 4px $color;
+}
