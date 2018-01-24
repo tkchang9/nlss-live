@@ -25,6 +25,14 @@ module.exports = {
                 use: {
                   loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    publicPath: 'fonts/'
+                }
             }
         ]
     },

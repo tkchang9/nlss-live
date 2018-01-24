@@ -69,10 +69,18 @@
 
 __webpack_require__(1);
 
+__webpack_require__(2);
+
 console.log('This is working.');
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
