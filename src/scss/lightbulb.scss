@@ -1,0 +1,12 @@
+$lbSize: 15px;
+
+.lightbulb {
+    height: $lbSize;
+    width: $lbSize;
+    border-radius: 50%;
+    background: radial-gradient(white, orange);
+    box-shadow: 0 0 $lbSize $lbSize/3 orange;
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+}
