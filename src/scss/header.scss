@@ -3,16 +3,32 @@
 @import 'mixins.scss';
 
 // Title/header
+.titleWrap {
+    // Positioning
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    // Appearance
+    font-family: 'American Purpose';
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
 .title, .titleThe {
     color: $fontYellow;
     @include textShadow3D(5, $fontYSub);
 }
 .titleThe {
     position: absolute;
-    top: 4%;
-    left: 34%;
+    top: 20px;
+    left: 0;
+    z-index: 20;
     transform: rotate(-15deg);
     font-size: 0.6em;
+    margin: 0 auto;
 }
 .titleLive {
     color: $mainRed;
@@ -22,9 +38,6 @@
 
 header {
     background-color: $mainBrown;
-    font-family: 'American Purpose';
-    font-size: 4em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    border: 5px solid black;
 }
