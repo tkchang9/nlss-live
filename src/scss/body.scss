@@ -1,0 +1,11 @@
+body {
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin: auto;
+    background: $bgGradient;
+    height: 100%;
+    padding: 50px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    box-shadow: 0 0 100px 10px black;
+}

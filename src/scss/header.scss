@@ -4,15 +4,13 @@
 
 // Title/header
 .titleWrap {
-    // Positioning
     position: relative;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
+    display: block;
     margin: 0 auto;
+    padding-top: 10px;
     // Appearance
     font-family: 'American Purpose';
-    font-size: 4em;
+    font-size: 4vw;
     text-transform: uppercase;
     text-align: center;
     line-height: 1em;
@@ -21,9 +19,12 @@
     color: $fontYellow;
     @include textShadow3D(5, $fontYSub);
 }
+.title {
+    margin: 0;
+}
 .titleThe {
     position: absolute;
-    top: 20px;
+    top: -2vw;
     left: 0;
     z-index: 20;
     transform: rotate(-15deg);
@@ -35,9 +36,35 @@
     font-size: 1.2em;
     @include textShadow3D(5, $mainPurple);
 }
-
-header {
+.titleBG {
+    max-width: 700px;
+    box-sizing: border-box;
+    // Positioning
+    position: relative;
+    // display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    // Appearance
     background-color: $mainBrown;
-    display: flex;
     border: 5px solid black;
+    padding: 3vw;
+}
+header {
+    display: block;
+}
+
+// Light Border
+.lightBorder {
+    max-width: 700px;
+    margin: 0 auto;
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        li {
+            display: block;
+        }
+    }
 }

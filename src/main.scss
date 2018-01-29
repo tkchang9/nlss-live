@@ -1,9 +1,11 @@
 @import './scss/colours.scss';
 
+@import './scss/body.scss';
 @import './scss/header.scss';
 @import './scss/lightbulb.scss';
 
 html {
+    position: relative;
     height: 100%;
-    background: $bgGradient;
+    background: $mainBrown + 20;
 }
