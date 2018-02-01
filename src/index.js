@@ -7,7 +7,7 @@ require("./main.scss");
 const nlssMembers = ["northernlion", "rockleesmile", "jsmithoti", 
 "cobaltstreak", "alpacapatrol", "last_grey_wolf", "baertaffy", 
 "roundtablepodcast"]
-const apiID = "https://api.twitch.tv/kraken/users?login=";
+const apiID = "https://api.twitch.tv/helix/users?login=";
 const apiStream = "https://api.twitch.tv/kraken/streams/";
 const apiChannel = "https://api.twitch.tv/kraken/channels/";
 
@@ -39,7 +39,7 @@ function streamInfo(channel) {
     let streamRequest = new Request(apiID + channel, {
             method: 'GET',
             headers: new Headers({
-                'Accept': 'application/vnd.twitchtv.v5+json',
+                // 'Accept': 'application/vnd.twitchtv.v5+json',
                 'Client-ID': '4rpr4c1cbq9sx6utlr6qklej58yv7i'
             })
         });
@@ -48,7 +48,7 @@ function streamInfo(channel) {
         return response.json();
     }).then(function(streamData) {
         console.log(streamData);
-        
+
     });
 
     // $.ajax({
