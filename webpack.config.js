@@ -38,5 +38,6 @@ module.exports = {
     },
     plugins: [
         extractSass
-    ]
+    ],
+    devtool: 'inline-source-map'
 };

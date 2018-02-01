@@ -1,4 +1,4 @@
-export default { ajaxGet }
+export { ajaxGet };
 
 function ajaxGet(url) {
     return new Promise(function(resolve, reject) {
