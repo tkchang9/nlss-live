@@ -3,9 +3,10 @@
 @import './scss/body.scss';
 @import './scss/header.scss';
 @import './scss/lightbulb.scss';
+@import './scss/members.scss';
 
 html {
     position: relative;
-    height: 100%;
+    // height: 100%;
     background: $mainBrown + 20;
 }

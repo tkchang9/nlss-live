@@ -1,0 +1,16 @@
+@import 'colours.scss';
+
+.memberGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.memberContainer {
+    width: 200px;
+    height: 200px;
+}
+
+.memberImage {
+    height: 150px;
+}
