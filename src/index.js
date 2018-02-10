@@ -6,7 +6,8 @@ require("./main.scss");
 
 const nlssMembers = ["northernlion", "rockleesmile", "jsmithoti", 
 "cobaltstreak", "alpacapatrol", "last_grey_wolf", "baertaffy", 
-"roundtablepodcast"]
+"michaelalfox", "mathasgames", "dangheesling", "lovelymomo",
+"sinvicta"]
 
 const apiId = "https://api.twitch.tv/helix/users?";
 const apiStream = "https://api.twitch.tv/helix/streams?";
@@ -74,7 +75,7 @@ function streamInfo(channel) {
         console.log(channelInfo);
         channelInfo.map((i) => {
             streamId = i.id;
-            streamName = i.display_name;
+            streamName = i.login;
             streamImage = i.profile_image_url;
             streamLink = 'https://www.twitch.tv/'+i.login;
             document.getElementsByClassName('memberGrid')[0].innerHTML += 
@@ -83,22 +84,27 @@ function streamInfo(channel) {
                 <div class='memberName'>${streamName}</div>
                 </div>`
                 ;
+            // add id as class because live info does not have login names, only id
+            document.getElementsByClassName(streamName)[0].classList.add(streamId);
         });
+        // get stream info
+        let streamUrl = apiStream;
+        nlssMembers.map((i)=>{
+            streamUrl += '&user_login='+i;
+        });
+        fetch(new Request(streamUrl, requestHeader)).then(function(response) {
+            return response.json();
+        }).then(function(streamData) {
+            liveInfo = streamData.data;
+            console.log(liveInfo);
+            liveInfo.map((i) => {
+                id = ''+i.user_id;
+                document.getElementsByClassName(id)[0].classList.add('live');
+    
+            })
+        })
     });
 
-    // get stream info
-    let streamUrl = apiStream;
-    nlssMembers.map((i)=>{
-        streamUrl += '&user_login='+i;
-    });
-    fetch(new Request(streamUrl, requestHeader)).then(function(response) {
-        return response.json();
-    }).then(function(streamData) {
-        liveInfo = streamData.data;
-        liveInfo.map((i) => {
-            
-        })
-    })
 
 
 }

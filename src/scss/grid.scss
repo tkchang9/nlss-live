@@ -1,15 +1,26 @@
+//imports
+@import 'colours.scss';
+
 .staticGrid {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: min-content min-content min-content min-content min-content min-content min-content;
+    grid-template-rows: min-content min-content min-content min-content;
+    justify-content: center;
 }
 
 .member {
     // display: inline-block;
     border: 4px solid black;
+    filter: grayscale(90%);
+    :hover {
+        box-shadow: 0 0 10px 5px $fontYellow;
+    }
     img {
         display: block; //removes small padding below image, default is inline
         width: 200px;
+    }
+    &.live {
+        filter: unset !important;
     }
     &.alpacapatrol {
         grid-column: 1;
