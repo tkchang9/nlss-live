@@ -19,40 +19,6 @@ const apiStream = "https://api.twitch.tv/helix/streams?";
 
 function streamInfo(channel) {
     let channelInfo, liveInfo, streamOnline, streamGame, streamId, streamImage, streamName, streamLink;
-    // streamID = ajaxGet(apiID + channel).then(function(results){console.log(results)});
-    // console.log(streamID);
-    // streamData = ajaxGet(apiStream + streamID);
-    // switch (streamData.stream) {
-    //     case null: //stream is offline
-    //         streamOnline = false;
-    //         streamGame = 'Offline';
-    //         offlineData = ajaxGet(apiChannel + streamID);
-    //         streamName = offlineData.display_name;
-    //         streamURL = offlineData.url;
-    //         break;
-    //     case undefined: //stream closed
-    //         streamOnline = false;
-    //         streamGame = 'Account closed';
-    //         break;
-    //     default: //stream online
-    //         streamOnline = true;
-    //         streamGame = streamData.stream.game;
-    //         streamName = streamData.channel.display_name;
-    //         streamURL = streamData.channel.url;
-    //         break;
-    // }
-
-    // $.ajax({
-    //     url: apiID + channel,
-    //     type: "GET",
-    //     headers: {
-    //         'Client-ID': '4rpr4c1cbq9sx6utlr6qklej58yv7i',
-    //         'Accept': 'application/vnd.twitchtv.v5+json'
-    //     },
-    //     success: function(data) {
-    //         console.log(data);
-    //     }
-    // });
 
     // header for all twitch api calls - used with Request
     let requestHeader = {
@@ -78,12 +44,12 @@ function streamInfo(channel) {
             streamName = i.login;
             streamImage = i.profile_image_url;
             streamLink = 'https://www.twitch.tv/'+i.login;
-            document.getElementsByClassName('memberGrid')[0].innerHTML += 
-                `<div class='memberContainer ${streamId}'>
-                <img class='memberImage' src='${streamImage}'></img>
-                <div class='memberName'>${streamName}</div>
-                </div>`
-                ;
+            // document.getElementsByClassName('memberGrid')[0].innerHTML += 
+            //     `<div class='memberContainer ${streamId}'>
+            //     <img class='memberImage' src='${streamImage}'></img>
+            //     <div class='memberName'>${streamName}</div>
+            //     </div>`
+            //     ;
             // add id as class because live info does not have login names, only id
             document.getElementsByClassName(streamName)[0].classList.add(streamId);
         });
@@ -104,9 +70,31 @@ function streamInfo(channel) {
             })
         })
     });
-
-
-
 }
 
-streamInfo(nlssMembers);
+function modalShow() {
+    let modal = document.getElementsByClassName('modal')[0];
+    let openM = document.getElementsByClassName('member');
+    let closeM = document.getElementsByClassName('close')[0];
+    // convert HTMLCollection into array - es6
+    let openMA = Array.from(openM);
+    openMA.map((m) => {
+        m.onclick = () => {
+            modal.style.display = 'block';
+        }
+    })
+    closeM.onclick = () => {
+        modal.style.display = 'none';
+    } 
+    window.onclick = (e) => {
+        if (e.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+}
+
+
+window.onload = () =>{
+    streamInfo(nlssMembers);
+    modalShow();
+}
