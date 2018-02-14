@@ -10,7 +10,7 @@ require("./main.scss");
 const nlssMembers = ["northernlion", "rockleesmile", "jsmithoti", 
 "cobaltstreak", "alpacapatrol", "last_grey_wolf", "baertaffy", 
 "michaelalfox", "mathasgames", "dangheesling", "lovelymomo",
-"sinvicta"]
+"sinvicta", "eluc", "draculafetus", "indeimaus"]
 
 // twitch API urls - helix
 const apiId = "https://api.twitch.tv/helix/users?"; //user info
@@ -66,9 +66,13 @@ function streamInfo(channel) {
             //     <div class='memberName'>${streamName}</div>
             //     </div>`
             //     ;
-
-            // add id as class because live info does not have login names, only id
+        
+            // add ID as class because live info does not have login names,
+            // only ID; necessary for proper reference
             document.getElementsByClassName(streamName)[0].classList.add(streamId);
+            let curMC = document.getElementsByClassName('mContent '+streamName)[0].getElementsByTagName('div');
+            curMC[1].innerHTML = `<img src=${streamImage} />`;
+
         });
         // get stream info
         // placed within the user information call because it relies on the IDs of
@@ -99,6 +103,7 @@ function streamInfo(channel) {
 
                     // add elements
                     console.log(idDiv);
+                    console.log(streamName);
                     
                 })
 
