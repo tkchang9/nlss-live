@@ -16,10 +16,10 @@
 
 // modal content
 .modalContent {
-    background-color: #fefefe;
+    background-color: #666;
     margin: 5% auto;
     padding: 20px;
-    width: 80%;
+    width: 60%;
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
@@ -27,6 +27,11 @@
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
+}
+
+// each modal
+.mContent {
+    display: none;
 }
 
 // Close button 
