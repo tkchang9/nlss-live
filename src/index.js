@@ -102,8 +102,10 @@ function streamInfo(channel) {
                     gameName = gameInfo.name;
 
                     // add elements
-                    console.log(idDiv);
-                    console.log(streamName);
+                    console.log(idDiv.classList[1]);
+                    document.getElementsByClassName('mContent '+idDiv.classList[1])[0]
+                    .getElementsByTagName('div')[2].innerHTML = 
+                    `Currently Playing: ${gameName}`;
                     
                 })
 
