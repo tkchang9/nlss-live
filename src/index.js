@@ -132,11 +132,11 @@ function modalShow() {
     // shows modal content on click of any of the members
     openMA.map((m) => {
         m.onclick = () => {
-            modal.style.display = 'block';
+            modal.style.display = 'flex';
             console.log(m.classList[1]);
             // shows modal content of the member that was clicked on
             let curModal = document.getElementsByClassName('mContent '+m.classList[1])[0];
-            curModal.style.display = 'block';
+            curModal.style.display = 'flex';
         }
     })
 

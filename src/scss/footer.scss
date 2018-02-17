@@ -1,0 +1,17 @@
+@import './colours.scss';
+@import './mixins.scss';
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'American Purpose';
+    p {
+        font-size: 1rem;
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: $fontYellow;
+            @include textShadow3D(2, $fontYSub);
+        }
+    }
+}

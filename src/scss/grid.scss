@@ -12,6 +12,7 @@
     // display: inline-block;
     border: 4px solid black;
     filter: grayscale(90%);
+    cursor: pointer;
     :hover {
         box-shadow: 0 0 10px 5px $fontYellow;
     }

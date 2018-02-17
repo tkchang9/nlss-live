@@ -6,9 +6,10 @@
 @import './scss/lightbulb.scss';
 // @import './scss/members.scss';
 @import './scss/modal.scss';
+@import './scss/footer.scss';
 
 html {
     position: relative;
-    // height: 100%;
-    background: $mainBrown;
+    height: 100%;
+    background: $bgGradient;
 }

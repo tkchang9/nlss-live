@@ -16,33 +16,63 @@
 
 // modal content
 .modalContent {
+    position: relative;
     background-color: #666;
-    margin: 5% auto;
-    padding: 20px;
-    width: 60%;
+    margin: 15% auto;
+    padding: 30px;
+    width: auto;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px black;
+    // min-height: 400px;
     animation-name: animatetop;
     animation-duration: 0.4s;
 }
 // Add animation
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
+    from {top: -700px; opacity: 0}
     to {top: 0; opacity: 1}
 }
 
 // each modal
 .mContent {
     display: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    font-family: 'American Purpose';
+    .modalTitle {
+        font-size: 3em;
+    }
+    .modalImage {
+        border: 5px solid black;
+        img {
+            display: block;
+        }
+        :hover {
+            box-shadow: 0 0 10px 5px $fontYellow;
+        }
+    }
+    .modalGame {
+        margin: 10px;
+        font-size: 1.5em;
+    }
 }
 
 // Close button 
 .close {
     color: #aaa;
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 10px;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
     :hover, :focus {
         color: black;
         text-decoration: none;
-        cursor: pointer;
     }
 }
