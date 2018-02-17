@@ -60,7 +60,7 @@ function streamInfo(channel) {
         channelInfo.map((i) => {
             streamId = i.id;
             streamName = i.login;
-            streamDisplay = i.display_name;
+            streamDisplay = i.display_name.replace(/_/g," "); //regex replaces _ with spaces
             streamImage = i.profile_image_url;
             streamLink = 'https://www.twitch.tv/'+i.login;
             // document.getElementsByClassName('memberGrid')[0].innerHTML += 
@@ -74,7 +74,7 @@ function streamInfo(channel) {
             // only ID; necessary for proper reference
             document.getElementsByClassName(streamName)[0].classList.add(streamId);
             let curMC = document.getElementsByClassName('mContent '+streamName)[0].getElementsByTagName('div');
-            curMC[1].innerHTML = streamDisplay;
+            curMC[0].innerHTML = streamDisplay;
             curMC[1].innerHTML = `<img src=${streamImage} />`;
 
         });
