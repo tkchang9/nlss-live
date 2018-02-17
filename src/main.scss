@@ -10,6 +10,8 @@
 
 html {
     position: relative;
-    // height: 100%;
     background: $bgGradient;
+    background-repeat: no-repeat;
+    //fixes height 100% problem where scrolling gives problems
+    background-attachment: fixed;
 }
