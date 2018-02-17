@@ -1,4 +1,4 @@
-console.log('This is working.');
+// console.log('This is working.');
 
 require("./ampurpose.scss");
 
@@ -55,7 +55,7 @@ function streamInfo(channel) {
     }).then(function(streamData) {
         // manipulation of the json received from twitch
         channelInfo = streamData.data;
-        console.log(channelInfo);
+        // console.log(channelInfo);
         // each member listed in an array
         channelInfo.map((i) => {
             streamId = i.id;
@@ -90,7 +90,7 @@ function streamInfo(channel) {
             return response.json();
         }).then(function(streamData) {
             liveInfo = streamData.data;
-            console.log(liveInfo);
+            // console.log(liveInfo);
             liveInfo.map((i) => {
                 id = ''+i.user_id;
                 liveTitle = i.title;
@@ -106,7 +106,7 @@ function streamInfo(channel) {
                     gameName = gameInfo.name;
 
                     // add elements
-                    console.log(idDiv.classList[1]);
+                    // console.log(idDiv.classList[1]);
                     document.getElementsByClassName('mContent '+idDiv.classList[1])[0]
                     .getElementsByTagName('div')[2].innerHTML = 
                     `Currently Playing: ${gameName}`;
@@ -137,7 +137,7 @@ function modalShow() {
     openMA.map((m) => {
         m.onclick = () => {
             modal.style.display = 'flex';
-            console.log(m.classList[1]);
+            // console.log(m.classList[1]);
             // shows modal content of the member that was clicked on
             let curModal = document.getElementsByClassName('mContent '+m.classList[1])[0];
             curModal.style.display = 'flex';
