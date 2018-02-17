@@ -14,6 +14,14 @@ module.exports = {
     module: {
         loaders: [
             {
+                test: /\.html$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    publicPath: './'
+                }
+            },
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     use: ['css-loader', 'sass-loader']
@@ -30,8 +38,8 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
-                    publicPath: 'fonts/'
+                    name: 'fonts/[name].[ext]',
+                    publicPath: './'
                 }
             }
         ]
