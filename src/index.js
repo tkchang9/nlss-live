@@ -75,7 +75,8 @@ function streamInfo(channel) {
             document.getElementsByClassName(streamName)[0].classList.add(streamId);
             let curMC = document.getElementsByClassName('mContent '+streamName)[0].getElementsByTagName('div');
             curMC[0].innerHTML = streamDisplay;
-            curMC[1].innerHTML = `<img src=${streamImage} />`;
+            curMC[1].innerHTML = `<a href='${streamLink}' target='_blank'>
+            <img src=${streamImage} /></a>`;
 
         });
         // get stream info

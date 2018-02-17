@@ -47,8 +47,12 @@
     }
     .modalImage {
         border: 5px solid black;
-        img {
+        a {
             display: block;
+            outline: none;
+            img {
+                display: block;
+            }
         }
         :hover {
             box-shadow: 0 0 10px 5px $fontYellow;
