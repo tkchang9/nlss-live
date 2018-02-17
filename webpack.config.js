@@ -22,6 +22,14 @@ module.exports = {
                 }
             },
             {
+                test: /\.png$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'img/[name].[ext]',
+                    publicPath: './'
+                }
+            },
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     use: ['css-loader', 'sass-loader']

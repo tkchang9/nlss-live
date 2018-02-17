@@ -3,8 +3,9 @@
 require("./ampurpose.scss");
 
 require("./main.scss");
-
 require("./index.html");
+
+require.context("./img/", true, /\.png$/);
 
 // edit to add/remove new members to get information from twitch api
 // however, html is not dynamically generated based on this list so it will
